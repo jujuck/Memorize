@@ -16,6 +16,6 @@ X   6/ Comparaison des valeurs des cartes
        
 X   7/ Blocage des cartes validées
     
-    8/ Affichage des points gagnés
+X   8/ Blocage des onclick pendant 3sec de memorisation
     
-    9/ 
+    9/ Affichage des points gagnés

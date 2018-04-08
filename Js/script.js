@@ -1,22 +1,23 @@
 //création des variables
 var numBoucle = 0;
 var tour = 1;
-var points = 0
+var points = 0;
+var canPlay = true;
 var carteJouée1;
 var carteJouée2;
 
 
 //function de jouer
 function jouer(IdCarte, Value) {
-    
 
     //Sélection des 2 cartes
-    if (tour === 1) {
+    if (tour === 1 && canPlay === true) {
     carteJouée1 = document.getElementById("carte" + IdCarte);
     carteJouée1.classList.add("vu");
     carteJouée1.value = Value;
     tour++;
-    } else {
+    } else if (tour === 2 && canPlay ===true) {
+        canPlay = false;
         carteJouée2 = document.getElementById("carte" + IdCarte);
         carteJouée2.classList.add("vu");
         carteJouée2.value = Value;
@@ -32,6 +33,7 @@ function jouer(IdCarte, Value) {
                 carteJouée1.classList.remove("vu");
                 carteJouée2.classList.remove("vu");
             }
+            canPlay = true;
         }, 3000);
         
         tour = 1;
