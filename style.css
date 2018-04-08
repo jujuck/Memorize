@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d3d2d2;
+    text-align: center;
+}
+
+button {
+    width: 75px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 6px;
+}
+
+/*création du grid*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-auto-flow: row;
+    text-align: center;
+    align-content: center;
+    justify-content: space-around;
+    margin:25px;
+}
+
+.cartes {
+    width: 150px;
+    height: 75px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: yellow;
+}
