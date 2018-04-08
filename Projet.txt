@@ -1,0 +1,15 @@
+X   1/ Création de la structure Html et CSs simplifié
+
+X   2/Création d'une base de données petites (8 cartes).
+
+    3/Distribution des cartes et affichages (css, html)
+    => fonction new XMLHttprequest + boucle for + innnerHtml
+    
+    4/Création d'une variables aléatoire + suppression de la carte du Array
+
+    5/Récupération de la carte 1 et carte 2 puis réinitialisation de l'affichage.
+
+    6/ Comparaison des valeurs des cartes
+        1/ Identique => 1 pts et pas de réinitialisation des cartes
+        2/ Différentes => 0 pts et réinitialisation.
+    

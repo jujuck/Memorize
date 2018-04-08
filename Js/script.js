@@ -1,3 +1,6 @@
+//création des variables
+var numBoucle = 0;
+
 //Création du menu central
 function initCarte(numJeux) {
     var myRequestCarte = new XMLHttpRequest();
@@ -8,29 +11,18 @@ function initCarte(numJeux) {
             var carte =JSON.parse(myRequestCarte.responseText);
             var carteList = '<div class="container">';
 
-            for(var i = 0; i < carte.length; i++) {
+            for(var i = 0; i < 16; i++) {
+                var y = Math.floor(Math.random()*(16 -numBoucle));
+                console.log(y);
                 carteList += '<div class="cartes">';
-                carteList += '<h3>' + carte[i].name + '</h3>';
-                carteList += '<p>' + carte[i].num + '</p>';
-                carteList += '</div>';  
+                carteList += '<h3>' + carte[y].name + '</h3>';
+                carteList += '<p>' + carte[y].num + '</p>';
+                carteList += '</div>';
+                carte.splice((y), 1);
+                numBoucle++;
             }
             carteList += '</div>';
             document.getElementById('jeux' + numJeux).innerHTML = carteList;
-            
-            /*  var array = [];
-            var a = 0;
-            while (a < 25) {
-                y = Math.floor(Math.random()*24)+1;
-                for (var z = 0; z < array.length; z++) {
-                    if (array[z] === y) {
-                        error = 1;
-                    } else {
-                        array.push(y);
-                        a ++;
-                    }
-                }
-                console.log(array);
-            }*/
         }
     };
     myRequestCarte.send();
