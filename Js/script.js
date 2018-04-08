@@ -20,16 +20,18 @@ function jouer(IdCarte, Value) {
         carteJouée2 = document.getElementById("carte" + IdCarte);
         carteJouée2.classList.add("vu");
         carteJouée2.value = Value;
-
-        if (carteJouée1.value === carteJouée2.value) {
-            points++;
-            console.log(points);
-            carteJouée1.classList.add("validee");
-            carteJouée2.classList.add("validee");
-        } else {
-            carteJouée1.classList.remove("vu");
-            carteJouée2.classList.remove("vu");
-        }
+        
+        setTimeout(function() {
+            if (carteJouée1.value === carteJouée2.value) {
+                points++;
+                carteJouée1.classList.add("validee");
+                carteJouée2.classList.add("validee");
+            } else {
+                carteJouée1.classList.remove("vu");
+                carteJouée2.classList.remove("vu");
+            }
+        }, 5000);
+        
         tour = 1;
     }
 }
