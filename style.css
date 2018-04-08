@@ -29,10 +29,22 @@ button {
     margin:25px;
 }
 
+.vu {
+    border: 1px solid black;
+    border-radius: 3px;
+    color: white;
+}
+
+.validee {
+    opacity; 0.5;
+    text-shadow: 2px 2px yellow;
+    
+}
+
 .cartes {
     width: 150px;
     height: 75px;
-    border: 1px solid black;
+    border: 1px solid aqua;
     border-radius: 3px;
-    background-color: yellow;
+    background-color: black;
 }

@@ -1,5 +1,38 @@
 //création des variables
 var numBoucle = 0;
+var tour = 1;
+var points = 0
+var carteJouée1;
+var carteJouée2;
+
+
+//function de jouer
+function jouer(IdCarte, Value) {
+    
+
+    //Sélection des 2 cartes
+    if (tour === 1) {
+    carteJouée1 = document.getElementById("carte" + IdCarte);
+    carteJouée1.classList.add("vu");
+    carteJouée1.value = Value;
+    tour++;
+    } else {
+        carteJouée2 = document.getElementById("carte" + IdCarte);
+        carteJouée2.classList.add("vu");
+        carteJouée2.value = Value;
+
+        if (carteJouée1.value === carteJouée2.value) {
+            points++;
+            console.log(points);
+            carteJouée1.classList.add("validee");
+            carteJouée2.classList.add("validee");
+        } else {
+            carteJouée1.classList.remove("vu");
+            carteJouée2.classList.remove("vu");
+        }
+        tour = 1;
+    }
+}
 
 //Création du menu central
 function initCarte(numJeux) {
@@ -13,13 +46,14 @@ function initCarte(numJeux) {
 
             for(var i = 0; i < 16; i++) {
                 var y = Math.floor(Math.random()*(16 -numBoucle));
+                if (y !== -1) {
                 console.log(y);
-                carteList += '<div class="cartes">';
+                carteList += '<div class="cartes" onclick="jouer(' + carte[y].num + ',' + carte[y].value + ')" id="carte' + carte[y].num + '">';
                 carteList += '<h3>' + carte[y].name + '</h3>';
-                carteList += '<p>' + carte[y].num + '</p>';
                 carteList += '</div>';
                 carte.splice((y), 1);
                 numBoucle++;
+                }
             }
             carteList += '</div>';
             document.getElementById('jeux' + numJeux).innerHTML = carteList;
@@ -30,37 +64,5 @@ function initCarte(numJeux) {
 
 function distribution() {
     initCarte(1);
-    initCarte(2);
 };
 
-/*var x;
-var a = 1;
-
-
-
-/*Création du menu central
-function initMenu () {
-    var myRequestMenu = new XMLHttpRequest();
-    myRequestMenu.open('GET','javascript/donneemenu.json');
-
-    myRequestMenu.onreadystatechange = function () {
-        if(myRequestMenu.readyState === 4) {
-            var menu = JSON.parse(myRequestMenu.responseText);
-            var menuList = '<div id="contenu">';
-
-            for (var i = 0; i < menu.length; i += 1) {
-                menuList += '<div class="bloc button">';
-                menuList += '<h3>' + menu[i].name + '</h3>';
-                menuList += '<p>' + menu[i].accroche + '</p>';
-                menuList += '<button onclick="sendTheAJAX' + [i] + '()" class="go">GO</button>';
-                menuList += '</div>';
-                menuList += '</div>';
-
-            }
-        }
-        document.getElementById('container').innerHTML = menuList;
-    };
-    myRequestMenu.send();
-}
-
-initMenu();*/
