@@ -9,18 +9,34 @@ body {
 }
 
 /*======== Section Header ========*/
-button {
-    width: 75px;
-    height: 25px;
-    background-color: #fff;
-    border: 1px solid red;
-    border-radius: 6px;
-}
-
 header {
     width: 100%;
 }
 
+/*=====Section bouton ===========*/
+button {
+    width: 100px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 6px;
+    border-radius: 3px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s; 
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+    width: 110px;
+    height: 55px;
+}
+
+#recommencer {
+    display: none;
+}
 
 
 

@@ -3,25 +3,25 @@ var tour = 1;
 var points = 0;
 var nbTry = 0;
 var numBoucle = 0;
-var difficulte = 1;
 var canPlay = true; //Enable et disable l'appel au onclick
 var carteJouée1;
 var carteJouée2;
 var secondes = 0;
 var minutes = 0;
 
-//Définition des élements d'affihcage à modifier
+//Définition des élements d'affichage à modifier
 var pointsElt = document.getElementById("points");
 var nbTryElt = document.getElementById("nbTry");
-var difficulteElt = document.getElementById("difficulte");
+var difficulteElt;
 var tpsJeuxElt = document.getElementById("tpsJeux");
+var distributionElt = document.getElementById("distribution");
+var recommencerElt = document.getElementById("recommencer");
 
 //fonction de mise à jour de l'affihcage du score
 function affichageScore() {
     pointsElt.innerHTML = points;
     nbTryElt.innerHTML = nbTry;
-    difficulteElt.innerHTML = difficulte;
-    if (points === 8) {
+    if (points === (4 + (difficulteElt*4))) {
         
         alert("féliciations, vous avez réussi!!!");
     }
@@ -86,10 +86,9 @@ function initCarte(numJeux) {
             var carte =JSON.parse(myRequestCarte.responseText);
             var carteList = '<div class="container">';
 
-            for(var i = 0; i < 16; i++) {
-                var y = Math.floor(Math.random()*(16 -numBoucle));
+            for(var i = 0; i < (4 + (difficulteElt*4)); i++) {
+                var y = Math.floor(Math.random()*((4 + (difficulteElt*4)) -numBoucle));
                 if (y !== -1) {
-                console.log(y);
                 carteList += '<div class="cartes" onclick="jouer(' + carte[y].num + ',' + carte[y].value + ')" id="carte' + carte[y].num + '">';
                 carteList += '<h3>' + carte[y].name + '</h3>';
                 carteList += '</div>';
@@ -105,8 +104,15 @@ function initCarte(numJeux) {
 };
 
 function distribution() {
+    distributionElt.style.display ="none";
+    recommencerElt.style.display= "inline";
+    difficulteElt = document.getElementById("difficulte").value;
     initCarte(1);
     affichageScore();
     chrono();
 };
+
+function recommencer() {
+    window.location.reload();
+}
 
