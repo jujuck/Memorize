@@ -8,6 +8,7 @@ body {
     text-align: center;
 }
 
+/*======== Section Header ========*/
 button {
     width: 75px;
     height: 25px;
@@ -16,10 +17,17 @@ button {
     border-radius: 6px;
 }
 
+header {
+    width: 100%;
+}
+
+
+
+
 /*création du grid*/
-.container {
+/*.container {
     display: grid;
-    grid-template-columns: repeat(6, 200px);
+    grid-template-columns: repeat(8, 200px);
     grid-template-rows: auto;
     grid-gap: 5px;
     grid-auto-flow: row;
@@ -27,8 +35,40 @@ button {
     align-content: center;
     justify-content: space-around;
     margin:25px;
+}*/
+.contenu {
+    margin: 50px;
 }
 
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(8, minmax(100px, 1fr));
+    grid-auto-flow: dense;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+
+.col-2 {
+    grid-column-end: span 2;
+}
+
+
+.col-4 {
+    grid-column-end: span 4;
+}
+
+
+.col-8 {
+    grid-column-end: span 8;
+}
+
+
+/* Css des cartes selon leurs état : caché, vu et validée*/
 .vu {
     border: 1px solid black;
     border-radius: 3px;
@@ -42,9 +82,9 @@ button {
 }
 
 .cartes {
-    width: 150px;
-    height: 75px;
-    border: 1px solid aqua;
-    border-radius: 3px;
+    height: 250px;
+    border: 6px solid aqua;
+    border-radius: 6px;
     background-color: black;
+    margin: 15px;
 }

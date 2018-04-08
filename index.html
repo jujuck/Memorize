@@ -9,12 +9,32 @@
     
     </head>
     <body>
-        <h1>Memorize</h1>
-        <h2>Testez votre mémoire</h2>
-        <button onclick="distribution()">Distribution</button>
-        <div class="contenu" id="jeux1">
+        <header>
+            <div class="container">
+                <div class="col-2">
+                    <img LOGO>
+                </div>
+                <div class="col-4">
+                    <h1>Memorize</h1>
+                    <h2>Testez votre mémoire</h2>
+                </div>
+                <div class="col-2">
+                    <img AVATAR>
+                    <ul>
+                        <li><label>Points</label></li>
+                        <li><label>Temps de jeux</label></li>
+                        <li><Label>Difficulté</Label></li>
+                        <li><label>Nombre d'essai</label></li>
+                    </ul>
+                </div>
+            </div>  
+        </header>
+        <div class="container">
+            <div class="col-8">
+                <button onclick="distribution()">Distribution</button>
+            </div>
         </div>
-        <div class="contenu" id="jeux2">
+        <div class="contenu" id="jeux1">
         </div>
         <script src="js/script.js"></script>
     </body>
