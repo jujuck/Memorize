@@ -18,4 +18,25 @@ X   7/ Blocage des cartes validées
     
 X   8/ Blocage des onclick pendant 3sec de memorisation
     
-    9/ Affichage des points gagnés
+X   9/ Affichage 
+        X 1/Points gagnés
+        X 2/Nombre d'essaie
+        X 3/difficluté
+        
+    10/ Affichage Chrono
+        X 1/ lancement chrono
+        X 2/ Minutes et secondes
+        X 3/ Arrêt chrono
+        
+    11/ Création de difficulté
+        1/ nb de cartes 8 - 12 - 16 - 20
+        2/ gestion du temps de mémorisation
+        
+    12/ CSS des cartes
+        1/ deisgn de cartes
+        2/ personnification
+        
+    13/ Css de la page
+        1/ générale
+        2/ personnification
+        
