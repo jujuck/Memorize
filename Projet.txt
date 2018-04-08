@@ -9,12 +9,12 @@ X   4/Création d'une variables aléatoire + suppression de la carte du Array
 
 X   5/Récupération de la carte 1 et carte 2 puis réinitialisation de l'affichage.
 
-    6/ Comparaison des valeurs des cartes
+X   6/ Comparaison des valeurs des cartes
        X 1/ Identique => 1 pts et pas de réinitialisation des cartes
        X 2/ Différentes => 0 pts et réinitialisation.
        X 3/ affichage des cartes 5 secondes avant réinitialisation pour mémorisation
        
-    7/ Blocage des cartes validées
+X   7/ Blocage des cartes validées
     
     8/ Affichage des points gagnés
     

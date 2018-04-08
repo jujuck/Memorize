@@ -26,11 +26,13 @@ function jouer(IdCarte, Value) {
                 points++;
                 carteJouée1.classList.add("validee");
                 carteJouée2.classList.add("validee");
+                carteJouée1.onclick= null;
+                carteJouée2.onclick = null;
             } else {
                 carteJouée1.classList.remove("vu");
                 carteJouée2.classList.remove("vu");
             }
-        }, 5000);
+        }, 3000);
         
         tour = 1;
     }
