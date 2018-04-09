@@ -20,38 +20,61 @@
                 </div>
                 <div class="col-2">
                     <img AVATAR>
-                    <ul>
-                        <li><label>Points</label><span id="points"></span></li>
-                        <li><label>Temps de jeux</label><span id="tpsJeux"></span></li>
-                        <li><Label>Difficulté</Label> 
-                            <select name="difficulte" id="difficulte">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                            </select>
-                        </li>
-                        <li><label>Nombre d'essai</label><span id="nbTry"></span></li>
-                    </ul>
+                    <table>
+                        <tr>
+                            <td><label>Points</label></td>
+                            <td><span id="points"></span></td>
+                        <tr>
+                            <td><label>Temps de jeux</label></td>
+                            <td><span id="tpsJeux"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label>Nombre d'essai</label></td>
+                            <td><span id="nbTry"></span></td>
+                        </tr>
+                    </table>
                 </div>
             </div>  
         </header>
+        <section id="formulaire" class="container">
+            <div class="formulaire col-8">
+                  <ul>
+                    <li><Label>Nombre de cartes</Label> 
+                        <select name="difficulte" id="difficulte">
+                            <option value="1" selected>8</option>
+                            <option value="3">16</option>
+                            <option value="5">24</option>
+                            <option value="7">32</option>
+                        </select>
+                    </li>
+                    <li><Label>Temps de mémorisation</Label> 
+                        <select name="vitesse" id="vitesse">
+                            <option value="5000" selected>5 sec</option>
+                            <option value="3000">3 sec</option>
+                            <option value="1000">1 sec</option>
+                        </select>
+                    </li>
+                    <li><Label>Thèmes</Label> 
+                        <select name="theme" id="theme">
+                            <option value="carte1" selected>1</option>
+                            <option value="carte2">2</option>
+                            <option value="carte3">3</option>
+                        </select>
+                    </li>
+                    <button onclick="distribution()">Distribuer</button>
+                </ul>
+            </div>
+        </section>
+        <div class="contenu" id="jeux">
+        </div>
         <div class="container">
             <div class="col-8">
-                <div id="distribution">
-                    <button class="btn" onclick="distribution()" >Distribution</button>
-                </div>
                 <div id="recommencer">
                     <button class="btn" onclick="recommencer()" >Recommencer</button>
                 </div>
             </div>
         </div>
-        <div class="contenu" id="jeux1">
-        </div>
+        
         <script src="js/script.js"></script>
     </body>
 </html>

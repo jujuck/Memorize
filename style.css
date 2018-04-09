@@ -38,6 +38,13 @@ button:hover {
     display: none;
 }
 
+.formulaire {
+    width: 250px;
+    height: 350px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 
 
 /*création du grid*/
@@ -104,3 +111,18 @@ button:hover {
     background-color: black;
     margin: 15px;
 }
+
+.carte1 {
+    background-image: url('img/carte1.jpeg');
+}
+
+.carte2 {
+    background-image: url('img/carte2.jpeg');
+}
+
+.carte3 {
+    background-image: url('img/carte3.jpeg');
+}
+
+
+

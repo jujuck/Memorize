@@ -14,8 +14,10 @@ var pointsElt = document.getElementById("points");
 var nbTryElt = document.getElementById("nbTry");
 var difficulteElt;
 var tpsJeuxElt = document.getElementById("tpsJeux");
-var distributionElt = document.getElementById("distribution");
+var formulaireElt = document.getElementById("formulaire");
 var recommencerElt = document.getElementById("recommencer");
+var tpsMemorisation;
+var themes;
 
 //fonction de mise à jour de l'affihcage du score
 function affichageScore() {
@@ -58,7 +60,6 @@ function jouer(IdCarte, Value) {
         setTimeout(function() {
             if (carteJouée1.value === carteJouée2.value) {
                 points++;
-                console.log(points);
                 carteJouée1.classList.add("validee");
                 carteJouée2.classList.add("validee");
                 carteJouée1.onclick= null;
@@ -68,7 +69,7 @@ function jouer(IdCarte, Value) {
                 carteJouée2.classList.remove("vu");
             }
             canPlay = true;
-        }, 3000);
+        }, tspMemorisation);
         tour = 1;
         nbTry++;
         //Mise à jour de l'affichage
@@ -87,30 +88,34 @@ function initCarte(numJeux) {
             var carteList = '<div class="container">';
 
             for(var i = 0; i < (4 + (difficulteElt*4)); i++) {
-                var y = Math.floor(Math.random()*((4 + (difficulteElt*4)) -numBoucle));
+                var y = Math.floor(Math.random()*((4 + (difficulteElt*4)) - numBoucle));
                 if (y !== -1) {
-                carteList += '<div class="cartes" onclick="jouer(' + carte[y].num + ',' + carte[y].value + ')" id="carte' + carte[y].num + '">';
+                carteList += '<div class="cartes ' + themes + '" onclick="jouer(' + carte[y].num + ',' + carte[y].value + ')" id="carte' + carte[y].num + '">';
+                carteList += '<div class="vu">';
                 carteList += '<h3>' + carte[y].name + '</h3>';
+                carteList += '</div>';
                 carteList += '</div>';
                 carte.splice((y), 1);
                 numBoucle++;
                 }
             }
             carteList += '</div>';
-            document.getElementById('jeux' + numJeux).innerHTML = carteList;
+            document.getElementById('jeux').innerHTML = carteList;
         }
     };
     myRequestCarte.send();
-};
+}
 
 function distribution() {
-    distributionElt.style.display ="none";
+    formulaireElt.style.display ="none";
     recommencerElt.style.display= "inline";
     difficulteElt = document.getElementById("difficulte").value;
+    tspMemorisation = document.getElementById("vitesse").value;
+    themes = document.getElementById("theme").value;
     initCarte(1);
     affichageScore();
     chrono();
-};
+}
 
 function recommencer() {
     window.location.reload();

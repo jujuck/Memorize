@@ -13,6 +13,7 @@ X   6/ Comparaison des valeurs des cartes
        X 1/ Identique => 1 pts et pas de réinitialisation des cartes
        X 2/ Différentes => 0 pts et réinitialisation.
        X 3/ affichage des cartes 5 secondes avant réinitialisation pour mémorisation
+        4/ Possibilité de relancer la recherche (temps de mémorisation max);
        
 X   7/ Blocage des cartes validées
     
@@ -28,9 +29,10 @@ X   9/ Affichage
         X 2/ Minutes et secondes
         X 3/ Arrêt chrono
         
-    11/ Création de difficulté
+    11/ Création de difficulté et personniification
         X 1/ nb de cartes 8 - 12 - 16 - 20
         2/ gestion du temps de mémorisation
+        3/ thèmes
         
     12/ CSS des cartes
         1/ design de cartes
