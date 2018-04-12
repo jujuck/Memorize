@@ -27,18 +27,18 @@ X   9/ Affichage
     10/ Affichage Chrono
         X 1/ lancement chrono
         X 2/ Minutes et secondes
-        X 3/ Arrêt chrono
+         3/ Arrêt chrono
         
     11/ Création de difficulté et personniification
         X 1/ nb de cartes 8 - 12 - 16 - 20
-        2/ gestion du temps de mémorisation
-        3/ thèmes
+        X 2/ gestion du temps de mémorisation
+        X 3/ thèmes
         
     12/ CSS des cartes
-        1/ design de cartes
-        2/ personnification
+        X 1/ design de cartes
+        X 2/ personnification
         
     13/ Css de la page
-        1/ générale
-        2/ personnification
+        X 1/ générale
+        X 2/ personnification
         

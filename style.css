@@ -4,16 +4,129 @@
 }
 
 body {
-    background-color: #d3d2d2;
+    background-image: url(img/ethan-hu-590309-unsplash.jpg);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
     text-align: center;
+    font-family: "Ubuntu";
 }
+
+
 
 /*======== Section Header ========*/
 header {
     width: 100%;
+    margin-bottom: 50px;
 }
 
-/*=====Section bouton ===========*/
+h1 {
+    font-family : "Black Han Sans";
+    font-size: 45px;
+    font-weight: 65px
+    color: black;
+    text-shadow: 2px 2px white;
+    margin: 25px;
+}
+
+h2 {
+    font-family : "Black Han Sans";
+    font-size: 35px;
+    font-weight: 42px;
+    margin-bottom : 25px;
+    
+}
+
+.info-jeux {
+    border: 2px solid black;
+    background-color: white;
+    width: 75%;
+    border-radius: 6px;  
+}
+
+.avatar {
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 10px;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+td {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.right {
+    text-align: right;
+    width: 75px;
+}
+
+
+/*=====Section formualaire ===========*/
+.formulaire {
+    background-color: #d9d7d7;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 15px;
+    width: 350px;
+    height: 450px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h3 {
+    font-size : 25px;
+    margin: 15px;
+}
+
+p {
+    font-size: 18px;
+    margin: 15px;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.black { 
+    background-color: #000; 
+    opacity: 0.5;
+}
+
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.styled-select {
+   
+   height: 29px;
+   overflow: hidden;
+   width: 200px;
+    margin-left: 75px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   width: 150px;
+}
+
+select {
+    color: white;
+    text-align: center;
+}
+ 
 button {
     width: 100px;
     height: 50px;
@@ -21,6 +134,7 @@ button {
     border: 1px solid red;
     border-radius: 6px;
     border-radius: 3px;
+    margin: 25px;
     transition: all 1s;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -38,27 +152,59 @@ button:hover {
     display: none;
 }
 
-.formulaire {
-    width: 250px;
-    height: 350px;
-    margin-right: auto;
-    margin-left: auto;
+/* Css des cartes selon leurs état : caché, vu et validée*/
+.dos {
+    display: none;
 }
 
+.vu {
+    font-family: "Gaegu";
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    height: 250px;
+    vertical-align: middle;
+}
 
+.validee {
+    font-family: "Gaegu";
+    font-size: 20px;
+    opacity: 0.5;
+    text-shadow: 2px 2px yellow;
+    height: 250px;
+    
+}
+
+.cartes {
+    height: 250px;
+    border: 6px solid aqua;
+    border-radius: 6px;
+    box-shadow: 2px 2px black;
+    margin: 15px;
+    
+}
+
+.carte1 {
+    background-image: url('img/carte1.jpeg');
+}
+
+.carte2 {
+    background-image: url('img/carte2.jpeg');
+}
+
+.carte3 {
+    background-image: url('img/carte3.jpeg');
+}
+
+.cartename {
+    font-size : 48px;
+    font-weight: 56px;
+}
 
 /*création du grid*/
-/*.container {
-    display: grid;
-    grid-template-columns: repeat(8, 200px);
-    grid-template-rows: auto;
-    grid-gap: 5px;
-    grid-auto-flow: row;
-    text-align: center;
-    align-content: center;
-    justify-content: space-around;
-    margin:25px;
-}*/
+
 .contenu {
     margin: 50px;
 }
@@ -89,40 +235,3 @@ button:hover {
 .col-8 {
     grid-column-end: span 8;
 }
-
-
-/* Css des cartes selon leurs état : caché, vu et validée*/
-.vu {
-    border: 1px solid black;
-    border-radius: 3px;
-    color: white;
-}
-
-.validee {
-    opacity; 0.5;
-    text-shadow: 2px 2px yellow;
-    
-}
-
-.cartes {
-    height: 250px;
-    border: 6px solid aqua;
-    border-radius: 6px;
-    background-color: black;
-    margin: 15px;
-}
-
-.carte1 {
-    background-image: url('img/carte1.jpeg');
-}
-
-.carte2 {
-    background-image: url('img/carte2.jpeg');
-}
-
-.carte3 {
-    background-image: url('img/carte3.jpeg');
-}
-
-
-

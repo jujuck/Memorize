@@ -46,14 +46,18 @@ function jouer(IdCarte, Value) {
 
     //Sélection des 2 cartes
     if (tour === 1 && canPlay === true) {
+    exposition1 = document.getElementById("expostition" + IdCarte);
+    exposition1.classList.remove("dos");
+    exposition1.classList.add("vu");
     carteJouée1 = document.getElementById("carte" + IdCarte);
-    carteJouée1.classList.add("vu");
     carteJouée1.value = Value;
     tour++;
     } else if (tour === 2 && canPlay ===true) {
         canPlay = false;
+        exposition2 = document.getElementById("expostition" + IdCarte);
+        exposition2.classList.remove("dos");
+        exposition2.classList.add("vu");
         carteJouée2 = document.getElementById("carte" + IdCarte);
-        carteJouée2.classList.add("vu");
         carteJouée2.value = Value;
         
         //Vérification des cartes et temps de mémorisation
@@ -65,8 +69,10 @@ function jouer(IdCarte, Value) {
                 carteJouée1.onclick= null;
                 carteJouée2.onclick = null;
             } else {
-                carteJouée1.classList.remove("vu");
-                carteJouée2.classList.remove("vu");
+                exposition1.classList.remove("vu");
+                exposition1.classList.add("dos");
+                exposition2.classList.remove("vu");
+                exposition2.classList.add("dos");
             }
             canPlay = true;
         }, tspMemorisation);
@@ -91,8 +97,8 @@ function initCarte(numJeux) {
                 var y = Math.floor(Math.random()*((4 + (difficulteElt*4)) - numBoucle));
                 if (y !== -1) {
                 carteList += '<div class="cartes ' + themes + '" onclick="jouer(' + carte[y].num + ',' + carte[y].value + ')" id="carte' + carte[y].num + '">';
-                carteList += '<div class="vu">';
-                carteList += '<h3>' + carte[y].name + '</h3>';
+                carteList += '<div id=expostition' + carte[y].num + ' class="dos">';
+                carteList += '<h3 class="cartename">' + carte[y].name + '</h3>';
                 carteList += '</div>';
                 carteList += '</div>';
                 carte.splice((y), 1);
