@@ -20,13 +20,15 @@ var tpsMemorisation;
 var themes;
 
 //fonction de mise à jour de l'affihcage du score
-function affichageScore() {
+function affichageScore(points, nbTry) {
     pointsElt.innerHTML = points;
     nbTryElt.innerHTML = nbTry;
-    if (points === (4 + (difficulteElt*4))) {
-        
+    if (points === ((4 + (difficulteElt*4))/2)) {
+        clearInterval();
         alert("féliciations, vous avez réussi!!!");
+        window.location.reload();
     }
+    return;
 }
 
 //fonction chrono
@@ -74,12 +76,15 @@ function jouer(IdCarte, Value) {
                 exposition2.classList.remove("vu");
                 exposition2.classList.add("dos");
             }
+            //Mise à jour de l'affichage
+            nbTry++;
+            affichageScore(points, nbTry);
             canPlay = true;
         }, tspMemorisation);
         tour = 1;
-        nbTry++;
-        //Mise à jour de l'affichage
-        affichageScore();
+        
+        
+        
     }
 }
 
@@ -119,7 +124,7 @@ function distribution() {
     tspMemorisation = document.getElementById("vitesse").value;
     themes = document.getElementById("theme").value;
     initCarte(1);
-    affichageScore();
+    affichageScore(points, nbTry);
     chrono();
 }
 
