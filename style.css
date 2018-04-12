@@ -96,8 +96,8 @@ li {
 }
 
 .black { 
-    background-color: #000; 
-    opacity: 0.3;
+    background-color: #fff; 
+    opacity: 0.5;
 }
 
 .rounded {
@@ -124,6 +124,7 @@ li {
 
 select {
     color: black;
+    font-weight: 24px;
     text-align: center;
 }
  
